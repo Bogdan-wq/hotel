@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/hotel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>Hotel</title>
+</head>
+<body>
+<svg style="display: none">
+    <symbol id="youtube" viewBox="0 0 461.001 461.001">
+        <path style="fill:white;" d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728
+	c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137
+	C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607
+	c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"/>
+        <g>
+        </g>
+    </symbol>
+    <symbol id="facebook" viewBox="0 0 461.001 461.001">
+        <g>
+            <path d="M271.521,154.17v-40.541c0-6.086,0.28-10.8,0.849-14.13c0.567-3.335,1.857-6.615,3.859-9.853
+		c1.999-3.236,5.236-5.47,9.706-6.708c4.476-1.24,10.424-1.858,17.85-1.858h40.539V0h-64.809c-37.5,0-64.433,8.897-80.803,26.691
+		c-16.368,17.798-24.551,44.014-24.551,78.658v48.82h-48.542v81.086h48.539v235.256h97.362V235.256h64.805l8.566-81.086H271.521z"/>
+        </g>
+    </symbol>
+    <symbol id="twitter" viewBox="0 0 512 512">
+        <g>
+            <g>
+                <path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
+			c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
+			c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
+			c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152
+			c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792
+			c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44
+			C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568
+			C480.224,136.96,497.728,118.496,512,97.248z"/>
+            </g>
+        </g>
+    </symbol>
+    <symbol id="instagram" viewBox="0 0 512 512">
+        <g>
+            <g>
+                <path d="M352,0H160C71.648,0,0,71.648,0,160v192c0,88.352,71.648,160,160,160h192c88.352,0,160-71.648,160-160V160
+			C512,71.648,440.352,0,352,0z M464,352c0,61.76-50.24,112-112,112H160c-61.76,0-112-50.24-112-112V160C48,98.24,98.24,48,160,48
+			h192c61.76,0,112,50.24,112,112V352z"/>
+            </g>
+        </g>
+        <g>
+            <g>
+                <path d="M256,128c-70.688,0-128,57.312-128,128s57.312,128,128,128s128-57.312,128-128S326.688,128,256,128z M256,336
+			c-44.096,0-80-35.904-80-80c0-44.128,35.904-80,80-80s80,35.872,80,80C336,300.096,300.096,336,256,336z"/>
+            </g>
+        </g>
+        <g>
+            <g>
+                <circle cx="393.6" cy="118.4" r="17.056"/>
+            </g>
+        </g>
+    </symbol>
+</svg>
+<div class="first-page">
+    <!--Top-->
+    <div class="top">
+        <div class="top__image">
+            <img src="assets/images/icons/burger.png" alt="burger-menu">
+        </div>
+        <h1 class="top__header">Airbooking</h1>
+        <div class="top__search">
+            <img src="assets/images/icons/search.png" alt="search-icon">
+        </div>
+    </div>
+<!--Header-->
+    <header class="header gradient">
+        <div class="header__inner">
+            <div class="header__intro intro">
+                <h1 class="intro__title">A Brand New Hotel
+                    Beyond Ordinary</h1>
+                <a href="#" class="intro__button">Exploere IT</a>
+                <div class="intro__date date">
+                    <div class="intro__block date__block">
+                        <span class="date__label">Check In</span>
+                        <span class="date__value">16</span>
+                        <span class="date__choose">JUN</span>
+                    </div>
+                    <div class="intro__block date__block">
+                        <span class="date__label">Check Out</span>
+                        <span class="date__value">26</span>
+                        <span class="date__choose">JUN</span>
+                    </div>
+                    <div class="intro__block date__block">
+                        <span class="date__label">Guest</span>
+                        <span class="date__value">3</span>
+                        <span class="date__choose">3</span>
+                    </div>
+                    <a href="#" class="intro__block date__block">
+                        <div class="date__check">check
+                            Availability</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header__side-social-wrapper">
+            <div class="side-social">
+                <a href="#">
+                    <img src="assets/images/icons/facebook.png" alt="facebook">
+                </a>
+                <a href="#">
+                    <img src="assets/images/icons/twitter.png" alt="twitter">
+                </a>
+                <a href="#">
+                    <img src="assets/images/icons/instagram.png" alt="instagram">
+                </a>
+            </div>
+        </div>
+    </header>
+</div>
+<!--    Rooms-->
+<div class="rooms">
+    <div class="container">
+        <div class="rooms__inner">
+            <h1 class="rooms__title">Our Rooms</h1>
+            <div class="rooms__gallery gallery-room">
+                <a class="rooms__item gallery-room__item gallery--first background" href="#">
+                    <div class="gallery-room__background background__gradient">
+                        <span class="gallery-room__price-label">From 30$</span>
+                        <span class="gallery-room__room-type">Family Room</span>
+                    </div>
+                </a>
+                <a href="#" class="rooms__item gallery-room__item gallery--second background">
+                    <div class="gallery-room__background background__gradient">
+                        <span class="gallery-room__price-label">From 30$</span>
+                        <span class="gallery-room__room-type">Luxury Room</span>
+                    </div>
+                </a>
+                <a href="#" class="rooms__item gallery-room__item gallery--third background">
+                    <div class="gallery-room__background background__gradient">
+                        <span class="gallery-room__price-label">From 30$</span>
+                        <span class="gallery-room__room-type">Single Room</span>
+                    </div>
+                </a>
+                <a href="#" class="rooms__item gallery-room__item gallery--fourth background">
+                    <div class="gallery-room__background background__gradient">
+                        <span class="gallery-room__price-label">From 30$</span>
+                        <span class="gallery-room__room-type">Double Room</span>
+                    </div>
+                </a>
+                <a href="#" class="rooms__item gallery-room__item gallery--fifth background">
+                    <div class="gallery-room__background background__gradient">
+                        <span class="gallery-room__price-label">From 30$</span>
+                        <span class="gallery-room__room-type">Family Room</span>
+                    </div>
+                </a>
+                <a href="#" class="rooms__item gallery-room__item gallery--sixth background">
+                    <div class="gallery-room__background background__gradient">
+                        <span class="gallery-room__price-label">From 30$</span>
+                        <span class="gallery-room__room-type">Family Room</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Your best room-->
+<div class="your-best-room">
+    <div class="container">
+        <div class="your-best-room__inner">
+            <div class="your-best-room__general-info background">
+                <img src="assets/images/backgrounds/1.png" alt="general-image" class="background__image background__image_shd-padd">
+                <div class="your-best-room__explore-block explore-block">
+                    <h1 class="explore-block__title">Explorer Your Best Room</h1>
+                    <p class="explore-block__text">Phasellus enim libero, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis. Phasellus enim libero, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis. Phasellus enim libero.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Our services-->
+<div class="services">
+    <div class="container">
+        <div class="services__inner">
+            <h1 class="services__title">Our Services</h1>
+            <div class="services__row services-content">
+                <div class="services-content__item">
+                    <div class="services-content__icon">
+                        <img src="./assets/images/services/1.png" alt="restaraunt">
+                    </div>
+                    <h2>Restaraunt</h2>
+                    <p>Phasellus enim libero, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis.</p>
+                </div>
+                <div class="services-content__item">
+                    <div class="services-content__icon">
+                         <img src="./assets/images/services/2.png" alt="sportsclub">
+                    </div>
+                    <h2>Sports Club</h2>
+                    <p>Phasellus enim libero, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis.</p>
+                </div>
+                <div class="services-content__item">
+                    <div class="services-content__icon">
+                        <img src="./assets/images/services/3.png" alt="pickup">
+                    </div>
+                    <h2>Pick up</h2>
+                    <p>Phasellus enim libero, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Find your room here-->
+<div class="your-room-here">
+    <div class="your-room-here__image background">
+        <img src="./assets/images/backgrounds/1.png" alt="Your room here" class="background__image">
+    </div>
+    <div class="your-room-here__text find-yours-here">
+        <h1 class="find-yours-here__title">Find Your Best Room Here</h1>
+        <p class="find-yours-here__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+        <p class="find-yours-here__text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</p>
+        <button class="find-yours-here__btn">Read More</button>
+    </div>
+</div>
+
+
+<!--From the guest-->
+<div class="from-the-guest">
+    <div class="from-the-guest__inner">
+        <h1 class="from-the-guest__title">From The Guest</h1>
+        <div class="from-the-guest__paragraph">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</div>
+        <div class="from-the-guest__card guest-card">
+            <img class="guest-card__image" alt="Guest" src="./assets/images/guest/1.png">
+            <div class="guest-card__labels">
+                <span class="guest-card__name">Andrew Strauss</span>
+                <span class="guest-card__location">From New York, USA</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Keep calm and enjoy-->
+<div class="keep-calm-enjoy gradient">
+    <div class="keep-calm-enjoy__inner">
+        <h1 class="keep-calm-enjoy__title">Keep Clam And Enjoy Vaction</h1>
+        <img src="assets/images/icons/play-icon.png" alt="play-icon" class="keep-calm-enjoy__playicon">
+    </div>
+</div>
+
+
+<!--News-->
+<div class="news">
+    <div class="container">
+        <div class="news__inner">
+            <h1 class="news__title">Latest News</h1>
+            <article class="news__block news-content">
+                <div class="news-content__item news-item">
+                    <div class="news-item__image background">
+                        <img src="assets/images/news/1.png" class="background__image">
+                        <div class="news-item__outer background__gradient"></div>
+                    </div>
+                    <div class="news-item__other-info">
+                        <span class="news-item__label">This is a slider post </span>
+                        <span class="news-item__date">June 18, 2018</span>
+                        <p class="news-item__text">Phasellus enim libero, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis.</p>
+                        <a href="#" class="news-item__button">Read More</a>
+                    </div>
+                </div>
+                <div class="news-content__item news-item">
+                    <div class="news-item__image background">
+                        <img src="assets/images/news/2.png" class="background__image">
+                        <div class="news-item__outer background__gradient">
+                            <span class="news-item__date">June 18, 2018</span>
+                            <span class="news-item__label">This is a slider post </span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="news-content__item news-item">
+                    <div class="news-item__image background">
+                        <img src="assets/images/news/2.png" class="background__image">
+                        <div class="news-item__outer background__gradient">
+                            <span class="news-item__date">June 18, 2018</span>
+                            <span class="news-item__label">This is a slider post </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-content__item news-item">
+                    <div class="news-item__image background">
+                        <img src="assets/images/news/2.png" class="background__image">
+                        <div class="news-item__outer background__gradient">
+                        </div>
+                    </div>
+                    <div class="news-item__other-info">
+                        <span class="news-item__label">This is a slider post </span>
+                        <span class="news-item__date">June 18, 2018</span>
+                        <p class="news-item__text">Phasellus enim libero, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis.</p>
+                        <a href="#" class="news-item__button">Read More</a>
+                     </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <h3 class="footer__title">Airbooking</h3>
+            <p class="footer__text">Lorem ipsum dolor sit amet, conser adipiscing elit. In consectetur tincidunt dolor.</p>
+            <address class="footer__address address-tel">
+                <img src="assets/images/icons/geo.png">
+                <div class="address-tel__labels">
+                    <span class="address-tel__label">2345  Lyon Avenue</span>
+                    <span class="address-tel__label">Boston, MA, Massachusetts</span>
+                </div>
+            </address>
+            <div class="footer__tel address-tel">
+                <img src="assets/images/icons/tel.png">
+                <div class="address-tel__labels">
+                    <span class="tel__label">508-960-5584</span>
+                    <span class="tel__label">857-366-4240</span>
+                </div>
+            </div>
+            <span class="footer__linkslabel">Quick Links</span>
+            <div class="footer__menu bottom-menu">
+                <a href="#" class="bottom-menu__item">Accomodation	</a>
+                <a href="#" class="bottom-menu__item">Food & Drinks</a>
+                <a href="#" class="bottom-menu__item">Beach Venues	</a>
+                <a href="#" class="bottom-menu__item">Amenities</a>
+                <a href="#" class="bottom-menu__item">Noordwijk</a>
+                <a href="#" class="bottom-menu__item">Wellness</a>
+                <a href="#" class="bottom-menu__item">Manifesto</a>
+            </div>
+            <span class="footer__socialabel">Connect With Us</span>
+            <div class="footer__social">
+                <a href="#">
+                    <svg class="footer__icon">
+                        <use xlink:href="#facebook"></use>
+                    </svg>
+                </a>
+
+                <a href="#">
+                    <svg class="footer__icon">
+                        <use xlink:href="#twitter"></use>
+                    </svg>
+                </a>
+
+                <a href="#">
+                    <svg class="footer__icon">
+                        <use xlink:href="#youtube"></use>
+                    </svg>
+                </a>
+
+                <a href="#">
+                    <svg class="footer__icon">
+                        <use xlink:href="#instagram"></use>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer__copyright">
+                © 2018 Airbooking - All Rights Reserved
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

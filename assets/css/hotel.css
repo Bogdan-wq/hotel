@@ -1,0 +1,851 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+}
+
+button, input, textarea {
+  outline-offset: 0;
+  outline: none;
+  border: 0;
+  display: inline-block;
+}
+
+textarea {
+  display: block;
+  resize: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+address {
+  font-style: normal;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+* {
+  font-family: "Open Sans";
+}
+
+.first-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 1000px) {
+  .first-page {
+    height: 150vh;
+  }
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px 15px 28px;
+}
+.top__image {
+  cursor: pointer;
+}
+.top__header {
+  font-size: 36px;
+  color: #c19b76;
+  font-family: "Gilda Display";
+  font-weight: 400;
+}
+
+.gradient::before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: linear-gradient(to right, rgba(14, 111, 179, 0.65), rgba(193, 155, 118, 0.65));
+}
+
+.header {
+  flex-grow: 1;
+  background-image: url("../images/backgrounds/1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+@media screen and (max-width: 650px) {
+  .header {
+    flex-basis: 55%;
+  }
+}
+.header__side-social-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 50px;
+  overflow: hidden;
+  height: 100%;
+}
+@media screen and (max-width: 1000px) {
+  .header__side-social-wrapper {
+    top: 100%;
+    bottom: 0;
+    right: 0;
+    height: 50px;
+    width: 100%;
+    transform: translateY(-100%);
+  }
+}
+.header__side-social-wrapper .side-social {
+  width: 0;
+  height: 100%;
+  transition: width 0.2s;
+  background-color: white;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header__side-social-wrapper .side-social a:not(:first-child) {
+  margin-top: 10px;
+}
+@media screen and (max-width: 1000px) {
+  .header__side-social-wrapper .side-social {
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+  }
+  .header__side-social-wrapper .side-social a:not(:first-child) {
+    margin-left: 10px;
+    margin-top: 0;
+  }
+}
+.header__side-social-wrapper:hover .side-social {
+  width: 100%;
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+.header__intro {
+  max-width: 970px;
+  width: 100%;
+}
+
+.intro {
+  text-align: center;
+}
+.intro__title {
+  font-size: 81px;
+  color: white;
+  font-family: "Gilda Display";
+  font-weight: 400;
+}
+.intro__button {
+  display: inline-block;
+  padding: 25px 60px;
+  background-color: white;
+  border-radius: 37px;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 60px;
+}
+.intro__date {
+  width: 90%;
+  margin: 70px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 1000px) {
+  .intro__date {
+    justify-content: center;
+  }
+}
+.intro__block {
+  flex-basis: 25%;
+}
+@media screen and (max-width: 1000px) {
+  .intro__block {
+    flex-basis: 40%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .intro__block {
+    flex-basis: 55%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .intro__block {
+    flex-basis: 85%;
+  }
+}
+
+.date__block {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #939393;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.date__block:last-child {
+  justify-content: center;
+  background-color: #0e6fb3;
+}
+.date__label {
+  text-transform: uppercase;
+}
+.date__value {
+  font-family: "Gilda Display";
+  font-size: 89px;
+}
+.date__choose {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  cursor: pointer;
+}
+.date__choose::after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-right: 3px solid #939393;
+  border-bottom: 3px solid #939393;
+  margin-left: 30px;
+  transform: translateY(-4px) rotate(45deg);
+}
+.date__check {
+  color: white;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-family: "Gilda Display";
+  line-height: 36px;
+}
+
+.rooms {
+  padding: 100px 0;
+}
+.rooms__title {
+  text-align: center;
+  font-size: 72px;
+  color: #686868;
+  font-family: "Gilda Display";
+  font-weight: 400;
+  margin-bottom: 90px;
+}
+.rooms__gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 2rem;
+}
+@media screen and (max-width: 761px) {
+  .rooms__gallery {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+.rooms__item {
+  padding-top: 65%;
+}
+@media screen and (max-width: 761px) {
+  .rooms__item {
+    width: 85%;
+    padding-top: 45%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .rooms__item {
+    width: 100%;
+    padding-top: 75%;
+  }
+}
+
+.background {
+  position: relative;
+}
+.background__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.background__image_shd-padd {
+  background-color: white;
+  box-shadow: 3px 0px 65px #b5cbdd;
+  padding: 5px;
+}
+.background__gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.67), transparent);
+  color: white;
+}
+
+.gallery-room__item {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+}
+.gallery-room__item.gallery--first {
+  background-image: url("../images/rooms/1.png");
+}
+.gallery-room__item.gallery--second {
+  background-image: url("../images/rooms/2.png");
+}
+.gallery-room__item.gallery--third {
+  background-image: url("../images/rooms/3.png");
+}
+.gallery-room__item.gallery--fourth {
+  background-image: url("../images/rooms/4.png");
+}
+.gallery-room__item.gallery--fifth {
+  background-image: url("../images/rooms/5.png");
+}
+.gallery-room__item.gallery--sixth {
+  background-image: url("../images/rooms/6.png");
+}
+.gallery-room__background {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.gallery-room .gallery-room__room-type, .gallery-room .gallery-room__price-label {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.gallery-room__room-type {
+  margin-bottom: 15px;
+  padding: 0.5rem 20px;
+  background-color: #c19b76;
+}
+
+.your-best-room {
+  padding: 150px 0;
+  background-color: #eff4f8;
+}
+.your-best-room__general-info {
+  max-width: 880px;
+  padding-top: 53%;
+}
+@media screen and (max-width: 1100px) {
+  .your-best-room__general-info {
+    max-width: 80%;
+    padding-top: 73%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .your-best-room__general-info {
+    max-width: 100%;
+  }
+  .your-best-room__general-info img {
+    height: 80%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .your-best-room__general-info img {
+    height: 60%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .your-best-room__general-info img {
+    height: 48%;
+  }
+}
+.your-best-room__explore-block {
+  position: absolute;
+  top: 50%;
+  right: -25%;
+  transform: translateY(-50%);
+  z-index: 2;
+  padding: 30px;
+  background-color: white;
+  width: 50%;
+}
+@media screen and (max-width: 1100px) {
+  .your-best-room__explore-block {
+    width: 60%;
+  }
+  .your-best-room__explore-block .explore-block__title {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .your-best-room__explore-block {
+    position: static;
+    transform: translateY(0%);
+    width: 100%;
+  }
+}
+
+.explore-block__title {
+  font-size: 60px;
+  color: #686868;
+  font-family: "Gilda Display";
+  font-weight: 400;
+}
+.explore-block__text {
+  font-size: 16px;
+  line-height: 30px;
+  color: #686868;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+.services {
+  padding: 110px 0;
+}
+.services__title {
+  font-size: 72px;
+  color: #686868;
+  font-family: "Gilda Display";
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.services-content {
+  display: flex;
+}
+@media screen and (max-width: 900px) {
+  .services-content {
+    flex-direction: column;
+  }
+}
+.services-content__item {
+  flex: 1 1 33.333%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (max-width: 900px) {
+  .services-content__item:not(:first-child) {
+    margin-top: 40px;
+  }
+}
+.services-content__item h2 {
+  font-size: 30px;
+  color: #686868;
+  font-family: "Gilda Display";
+  font-weight: 400;
+  margin-top: 20px;
+}
+.services-content__item p {
+  margin-top: 30px;
+  font-size: 16px;
+  line-height: 30px;
+  color: #686868;
+  font-weight: 300;
+  padding: 0 17.5px;
+}
+@media screen and (max-width: 900px) {
+  .services-content__item p {
+    width: 80%;
+  }
+}
+.services-content__icon {
+  flex-grow: 1;
+}
+
+.your-room-here {
+  display: flex;
+}
+@media screen and (max-width: 1000px) {
+  .your-room-here {
+    flex-direction: column;
+  }
+}
+.your-room-here__image {
+  flex-basis: 55%;
+}
+@media screen and (max-width: 1000px) {
+  .your-room-here__image {
+    padding-top: 70%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .your-room-here__image {
+    padding-top: 90%;
+  }
+}
+.your-room-here__text {
+  flex-basis: 45%;
+  padding: 50px 50px;
+  background-color: #0e6fb3;
+  color: white;
+}
+.your-room-here__text .find-yours-here__title {
+  font-size: 40px;
+}
+
+.find-yours-here {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.find-yours-here__title {
+  font-size: 65px;
+  color: white;
+  font-family: "Gilda Display";
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+.find-yours-here__text {
+  font-size: 18px;
+  line-height: 40px;
+  color: white;
+  font-weight: 300;
+}
+.find-yours-here__text:nth-child(3) {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.find-yours-here__btn {
+  padding: 20px 40px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "Gilda Display";
+  color: #7b7b7b;
+  cursor: pointer;
+}
+
+.from-the-guest {
+  padding: 110px 0;
+}
+.from-the-guest__inner {
+  max-width: 780px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+.from-the-guest__title {
+  text-align: center;
+  font-size: 72px;
+  color: #686868;
+  font-family: "Gilda Display";
+  font-weight: 400;
+}
+.from-the-guest__paragraph {
+  text-align: left;
+  font-size: 18px;
+  line-height: 40px;
+  color: #686868;
+  font-weight: 300;
+  box-shadow: 1px 1px 35px #b5cbdd;
+  padding: 50px;
+  margin-top: 80px;
+}
+@media screen and (max-width: 450px) {
+  .from-the-guest__paragraph {
+    text-align: justify;
+    padding: 30px;
+  }
+}
+.from-the-guest__card {
+  margin-top: 50px;
+}
+
+.guest-card {
+  display: inline-flex;
+}
+.guest-card__labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+  margin-left: 30px;
+}
+.guest-card__name {
+  font-size: 36px;
+  font-family: "Gilda Display";
+  color: #686868;
+}
+.guest-card__location {
+  font-family: "Gilda Display";
+}
+
+.keep-calm-enjoy {
+  padding: 105px 0;
+  background-image: url("../images/backgrounds/2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 0;
+}
+.keep-calm-enjoy__inner {
+  position: relative;
+  z-index: 2;
+  width: 75%;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+.keep-calm-enjoy__title {
+  font-size: 70px;
+  color: white;
+  font-family: "Gilda Display";
+  font-weight: 400;
+}
+@media screen and (max-width: 600px) {
+  .keep-calm-enjoy__title {
+    font-size: 50px;
+  }
+}
+.keep-calm-enjoy__playicon {
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.news {
+  padding: 100px 0;
+}
+.news__inner {
+  text-align: center;
+}
+.news__title {
+  font-size: 72px;
+  color: #686868;
+  font-family: "Gilda Display";
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+.news-content {
+  display: grid;
+  grid-gap: 35px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "news-first news-second news-last" "news-first news-third news-last";
+}
+@media screen and (max-width: 1000px) {
+  .news-content {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "news-first news-last" "news-first news-last" "news-second news-third";
+  }
+}
+@media screen and (max-width: 700px) {
+  .news-content {
+    grid-template-columns: 1fr;
+    grid-template-areas: "news-first" "news-last" "news-third" "news-second";
+  }
+}
+@media screen and (max-width: 700px) {
+  .news-content__item {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 450px) {
+  .news-content__item {
+    width: 95%;
+  }
+}
+.news-content__item:first-child {
+  grid-area: news-first;
+}
+.news-content__item:nth-child(2) {
+  grid-area: news-second;
+}
+.news-content__item:nth-child(3) {
+  grid-area: news-third;
+}
+.news-content__item:last-child {
+  grid-area: news-last;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: column;
+}
+.news-item:first-child, .news-item:last-child {
+  box-shadow: 1px 1px 35px #b5cbdd;
+}
+.news-item__image {
+  padding-top: 75%;
+}
+.news-item__outer {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  padding: 20px 30px;
+}
+.news-item__other-info {
+  padding: 25px 20px;
+  text-align: left;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.news-item .news-item__date, .news-item .news-item__label {
+  font-family: "Gilda Display";
+}
+.news-item__label {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.news-item__date {
+  font-size: 14px;
+}
+.news-item__text {
+  font-size: 16px;
+  line-height: 30px;
+  color: #686868;
+  font-weight: 300;
+  flex-grow: 1;
+  margin-top: 20px;
+}
+.news-item__button {
+  padding: 1rem 20px;
+  background-color: #0e6fb3;
+  color: white;
+  margin-top: 20px;
+}
+
+.footer {
+  padding: 120px 0;
+  background-color: #454545;
+}
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 50px;
+  grid-row-gap: 40px;
+  color: white;
+  grid-template-areas: "footer-title footer-linkslabel footer-socialabel" "footer-text footer-menu footer-social" "footer-address footer-menu ." "footer-tel footer-menu ." ". . ." ". footer-copyright .";
+}
+@media screen and (max-width: 900px) {
+  .footer__inner {
+    grid-column-gap: 20px;
+    grid-template-areas: "footer-title . ." "footer-text footer-address footer-tel" "footer-linkslabel . ." "footer-menu . ." "footer-socialabel footer-socialabel ." "footer-social footer-social ." "footer-copyright . .";
+  }
+}
+@media screen and (max-width: 600px) {
+  .footer__inner {
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "footer-title" "footer-text" "footer-address" "footer-tel" "footer-linkslabel" "footer-menu " "footer-socialabel" "footer-social" "footer-copyright";
+  }
+}
+.footer__title {
+  grid-area: footer-title;
+  font-size: 35px;
+  color: #c19b76;
+  font-family: "Gilda Display";
+  font-weight: 400;
+}
+.footer__text {
+  grid-area: footer-text;
+}
+.footer__address {
+  grid-area: footer-address;
+}
+.footer__tel {
+  grid-area: footer-tel;
+}
+.footer__linkslabel {
+  grid-area: footer-linkslabel;
+  font-size: 24px;
+  color: white;
+  font-family: "Gilda Display";
+  font-weight: 400;
+}
+.footer__menu {
+  grid-area: footer-menu;
+}
+@media screen and (max-width: 900px) {
+  .footer__menu .bottom-menu__item {
+    margin-top: 10px;
+  }
+}
+.footer__socialabel {
+  grid-area: footer-socialabel;
+  font-size: 24px;
+  color: white;
+  font-family: "Gilda Display";
+  font-weight: 400;
+}
+.footer__social {
+  grid-area: footer-social;
+}
+.footer__icon {
+  fill: white;
+  width: 50px;
+  height: 30px;
+}
+.footer__copyright {
+  grid-area: footer-copyright;
+  font-family: "Gilda Display";
+}
+
+.address-tel {
+  display: flex;
+  align-items: flex-start;
+}
+.address-tel__labels {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+.address-tel__label:first-child {
+  margin-bottom: 0.1rem;
+}
+
+.bottom-menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.bottom-menu__item {
+  height: 25%;
+  color: white;
+}
+
+/*# sourceMappingURL=hotel.css.map */

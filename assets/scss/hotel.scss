@@ -1,0 +1,1011 @@
+@import "../../../../best-practices/reset";
+@import "../../../../best-practices/background-mixin";
+
+$font-gildaDisplay:'Gilda Display';
+$font-openSans:'Open Sans';
+
+$gradient-first-color:transparentize(#0e6fb3,0.35);
+$gradient-second-color:transparentize(#c19b76,0.35);
+
+$gradient-header:linear-gradient(to right,$gradient-first-color,$gradient-second-color);
+$gradient-room:linear-gradient(to top,rgba(0,0,0,.67),transparent);
+
+
+$color-gray:#939393;
+$color-darken-gray:#686868;
+
+$bg-blue:#0e6fb3;
+$bg-brown:#c19b76;
+$bg-pale-cornflower-blue:#eff4f8;
+$bg-gray:#454545;
+
+$boxshadow-blue:#b5cbdd;
+
+
+.container {
+  max-width: 1200px;
+  padding:0 15px;
+  width:100%;
+  margin:0 auto;
+}
+
+* {
+  font-family: $font-openSans;
+}
+@mixin titles($font-size,$color : $color-darken-gray) {
+  font-size: $font-size;
+  color:$color;
+  font-family: $font-gildaDisplay;
+  font-weight: 400;
+}
+
+@mixin text($font-size,$line-height,$color : #686868 ) {
+  font-size:$font-size;
+  line-height: $line-height;
+  color: $color;
+  font-weight: 300;
+}
+
+
+//First-page
+.first-page {
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 1000px){
+    height:150vh;
+  }
+}
+
+//Top
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding:15px 20px 15px 28px;
+
+  &__image {
+    cursor: pointer;
+  }
+  &__header {
+    @include titles(36px,#c19b76);
+  }
+}
+
+
+//Gradient
+.gradient {
+  &::before {
+    position: absolute;
+    content: '';
+    display: block;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    z-index:1;
+    background:$gradient-header;
+  }
+}
+
+
+
+//Header
+.header {
+  flex-grow: 1;
+  @include background(url("../images/backgrounds/1.png"));
+  position:relative;
+  @media screen and (max-width: 650px){
+    flex-basis: 55%;
+  }
+
+  &__side-social-wrapper {
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:2;
+    width:50px;
+    overflow:hidden;
+    height:100%;
+
+    @media screen and (max-width: 1000px){
+      top:100%;
+      bottom: 0;
+      right:0;
+      height:50px;
+      width:100%;
+      transform: translateY(-100%);
+    }
+
+
+    .side-social {
+      width:0;
+      height:100%;
+      transition: width .2s;
+      background-color: white;
+      display: flex;
+      overflow: hidden;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      a:not(:first-child) {
+        margin-top:10px;
+      }
+
+      @media screen and (max-width: 1000px) {
+        flex-direction: row;
+        width:100%;
+        height:100%;
+        a:not(:first-child) {
+          margin-left:10px;
+          margin-top:0;
+        }
+      }
+    }
+
+    &:hover .side-social {
+      width:100%;
+    }
+  }
+
+
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+    position: relative;
+    z-index:2;
+  }
+
+
+
+  &__intro {
+    max-width: 970px;
+    width:100%;
+  }
+}
+
+
+
+
+
+//Intro
+.intro {
+
+  text-align: center;
+  &__title {
+    @include titles(81px,white);
+  }
+
+  &__button {
+    display: inline-block;
+    padding:25px 60px;
+    background-color: white;
+    border-radius: 37px;
+    font-size:18px;
+    text-transform: uppercase;
+    margin-top:60px;
+  }
+
+  &__date {
+    width:90%;
+    margin: 70px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    @media screen and (max-width: 1000px){
+      justify-content: center;
+    }
+  }
+
+  &__block {
+    flex-basis: 25%;
+    @media screen and (max-width: 1000px){
+      flex-basis: 40%;
+    }
+    @media screen and (max-width: 650px){
+      flex-basis: 55%;
+    }
+    @media screen and (max-width: 450px){
+      flex-basis: 85%;
+    }
+  }
+}
+
+.date {
+
+  &__block {
+
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:$color-gray;
+    padding-top:30px;
+    padding-bottom: 30px;
+    &:last-child {
+      justify-content: center;
+      background-color: $bg-blue;
+    }
+  }
+
+  &__label {
+    text-transform: uppercase;
+  }
+  &__value {
+    font-family: $font-gildaDisplay;
+    font-size:89px;
+  }
+
+  &__choose {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      display: block;
+      width:15px;
+      height:15px;
+      border: {
+        right:3px solid $color-gray;
+        bottom:3px solid $color-gray;
+      }
+      margin-left:30px;
+      transform:translateY(-4px) rotate(45deg);
+    }
+  }
+
+  &__check {
+    color:white;
+    text-transform: uppercase;
+    font-size:30px;
+    font-family: $font-gildaDisplay;
+    line-height: 36px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Rooms
+.rooms {
+  padding:100px 0;
+
+  &__title {
+    text-align: center;
+    @include titles(72px,#686868);
+    margin-bottom: 90px;
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    grid-gap:2rem;
+    @media screen and (max-width: 761px) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+  }
+
+  &__item {
+    padding-top:65%;
+    @media screen and (max-width: 761px){
+      width:85%;
+      padding-top:45%;
+    }
+
+    @media screen and (max-width: 500px){
+      width:100%;
+      padding-top:75%;
+    }
+  }
+}
+
+
+
+
+//General-image
+.background {
+  position:relative;
+  &__image {
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    z-index:0;
+    object-fit: cover;
+    height:100%;
+    width:100%;
+
+    &_shd-padd {
+      background-color: white;
+      box-shadow: 3px 0px 65px $boxshadow-blue;
+      padding:5px;
+    }
+  }
+  &__gradient {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:1;
+    background: $gradient-room;
+    color:white;
+  }
+}
+
+
+
+//Room references
+$images-gallery : (
+  first:url("../images/rooms/1.png"),
+  second:url("../images/rooms/2.png"),
+  third:url("../images/rooms/3.png"),
+  fourth:url("../images/rooms/4.png"),
+  fifth:url("../images/rooms/5.png"),
+  sixth:url("../images/rooms/6.png")
+);
+
+
+
+//Room gallery
+.gallery-room {
+  &__item {
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+
+    position: relative;
+    color:white;
+
+    @each $count,$image in $images-gallery {
+      &.gallery--#{$count} {
+        background-image: $image;
+      }
+    }
+  }
+
+  &__background {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-bottom:20px;
+  }
+
+  %for-labels {
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  &__price-label {
+    @extend  %for-labels;
+  }
+
+  &__room-type {
+    margin-bottom:15px ;
+    padding:.5rem 20px;
+    background-color:$bg-brown;
+    @extend %for-labels;
+  }
+}
+
+
+
+
+
+
+
+
+//Your-best-rooms
+.your-best-room {
+  padding:150px 0;
+  background-color: $bg-pale-cornflower-blue;
+
+  &__general-info {
+    max-width: 880px;
+    padding-top:53%;
+
+    @media screen and (max-width: 1100px) {
+      max-width: 80%;
+      padding-top:73%;
+    }
+
+    @media screen and (max-width: 800px) {
+      max-width:100%;
+      img {
+        height:80%;
+      }
+    }
+
+    @media screen and (max-width: 550px) {
+      img {
+        height: 60%;
+      }
+    }
+
+      @media screen and (max-width: 450px) {
+        img {
+          height:48%;
+        }
+       }
+  }
+
+  &__explore-block {
+    position: absolute;
+    top:50%;
+    right:-25%;
+    transform: translateY(-50%);
+    z-index:2;
+    padding:30px;
+    background-color: white;
+    width:50%;
+    @media screen and (max-width: 1100px) {
+      .explore-block__title {
+        font-size:40px;
+      }
+      width:60%;
+    }
+
+    @media screen and (max-width: 800px) {
+      position: static;
+      transform: translateY(0%);
+      width:100%;
+    }
+  }
+}
+
+
+
+
+//Explore-block
+.explore-block {
+  &__title {
+    @include titles(60px,#686868);
+  }
+
+  &__text {
+    @include text(16px,30px);
+    margin-top:10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//Services
+.services {
+  padding:110px 0;
+
+  &__inner {
+
+  }
+
+  &__title {
+    @include titles(72px,#686868);
+    text-align: center;
+    margin-bottom: 80px;
+  }
+}
+
+
+
+//Services content
+.services-content {
+  display: flex;
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
+
+  &__item {
+    flex: 1 1 33.333%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (max-width: 900px) {
+      &:not(:first-child) {
+        margin-top:40px;
+      }
+    }
+
+    h2 {
+      @include titles(30px,#686868);
+      margin-top:20px;
+    }
+
+    p {
+      margin-top:30px;
+      @include text(16px,30px,#686868);
+      padding:0 17.5px;
+      @media screen and (max-width: 900px) {
+        width:80%;
+      }
+    }
+  }
+
+  &__icon {
+    flex-grow: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Your room here
+.your-room-here {
+  display: flex;
+  @media screen and (max-width: 1000px){
+    flex-direction: column;
+  }
+
+  &__image {
+    flex-basis: 55%;
+    @media screen and (max-width: 1000px){
+      padding-top:70%;
+    }
+    @media screen and (max-width: 600px){
+      padding-top:90%;
+    }
+  }
+
+  &__text {
+    flex-basis:45%;
+    padding:50px 50px;
+    background-color: $bg-blue;
+    color:white;
+
+    .find-yours-here__title {
+      font-size:40px;
+    }
+  }
+}
+
+
+
+
+
+
+
+//Find yours here
+.find-yours-here {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  &__title {
+    @include titles(65px,white);
+    margin-bottom: 50px;
+  }
+
+  &__text {
+    @include text(18px,40px,white);
+    &:nth-child(3) {
+      margin-top:50px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__btn {
+    padding:20px 40px;
+    text-transform: uppercase;
+    font-size:20px;
+    font-family: $font-gildaDisplay;
+    color:#7b7b7b;
+    cursor: pointer;
+  }
+}
+
+
+
+
+
+//From the guest
+.from-the-guest {
+  padding:110px 0;
+  &__inner {
+    max-width:780px;
+    width:90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+
+  &__title {
+    text-align: center;
+    @include titles(72px,$color-darken-gray)
+  }
+
+  &__paragraph {
+    text-align: left;
+    @include text(18px,40px);
+    box-shadow: 1px 1px 35px #b5cbdd;
+    padding:50px;
+    margin-top:80px;
+    @media screen and (max-width: 450px){
+        text-align: justify;
+        padding:30px;
+    }
+
+  }
+
+  &__card {
+    margin-top:50px;
+  }
+}
+
+
+
+
+//Guest-card
+.guest-card {
+  display: inline-flex;
+
+  &__labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    margin-left:30px;
+  }
+
+  &__name {
+    font-size:36px;
+    font-family: $font-gildaDisplay;
+    color:$color-darken-gray;
+  }
+
+  &__location {
+    font-family: $font-gildaDisplay;
+  }
+}
+
+
+
+
+//keep calm enjoy
+.keep-calm-enjoy {
+  padding:105px 0;
+  @include background(url('../images/backgrounds/2.png'));
+  position: relative;
+  z-index:0;
+
+  &__inner {
+    position: relative;
+    z-index:2;
+    width:75%;
+    max-width: 600px;
+    margin:0 auto;
+    text-align: center;
+  }
+
+  &__title {
+    @include titles(70px,white);
+    @media screen and (max-width: 600px){
+        font-size:50px;
+    }
+  }
+
+  &__playicon {
+    margin-top: 40px;
+    cursor: pointer;
+  }
+}
+
+
+
+
+
+.news {
+  padding:100px 0;
+
+  &__inner {
+    text-align: center;
+  }
+
+  &__title {
+    @include titles(72px);
+    margin-bottom: 50px;
+  }
+}
+
+
+
+.news-content {
+  display: grid;
+  grid-gap:35px;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-areas:
+                  'news-first news-second news-last'
+                  'news-first news-third news-last';
+
+  @media screen and (max-width: 1000px){
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas:
+            'news-first news-last'
+            'news-first news-last'
+            'news-second news-third';
+  }
+
+  @media screen and (max-width: 700px){
+    grid-template-columns: 1fr;
+    grid-template-areas:
+            'news-first'
+            'news-last'
+            'news-third'
+            'news-second';
+  }
+
+
+
+  &__item {
+    @media screen and (max-width: 700px) {
+      width:80%;
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 450px) {
+      width:95%;
+    }
+
+
+    &:first-child {
+      grid-area: news-first;
+    }
+    &:nth-child(2) {
+      grid-area: news-second;
+    }
+    &:nth-child(3) {
+      grid-area: news-third;
+    }
+    &:last-child {
+      grid-area: news-last
+    }
+  }
+
+}
+
+
+
+
+
+
+//News item
+.news-item {
+  display:flex;
+  flex-direction: column;
+
+  &:first-child,&:last-child {
+    box-shadow: 1px 1px 35px $boxshadow-blue;
+  }
+
+  &__image {
+    padding-top:75%;
+  }
+
+  &__outer {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding:20px 30px;
+  }
+
+
+
+
+  &__other-info {
+    padding:25px 20px;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  %for-news-label {
+    font-family: $font-gildaDisplay;
+  }
+  &__label {
+    @extend %for-news-label;
+    font-size:24px;
+    margin-bottom: 10px;
+  }
+
+  &__date {
+    @extend %for-news-label;
+    font-size:14px;
+  }
+
+  &__text {
+    @include text(16px,30px,$color-darken-gray);
+    flex-grow: 1;
+    margin-top:20px;
+  }
+
+  &__button {
+    padding:1rem 20px;
+    background-color: $bg-blue;
+    color:white;
+    margin-top:20px;
+  }
+}
+
+
+
+
+
+
+
+//Footer
+.footer {
+  padding:120px 0;
+  background-color: $bg-gray;
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 50px;
+    grid-row-gap:40px;
+    color:white;
+    grid-template-areas:
+                        'footer-title footer-linkslabel footer-socialabel'
+                        'footer-text footer-menu footer-social'
+                        'footer-address footer-menu .'
+                        'footer-tel footer-menu .'
+                        '. . .'
+                        '. footer-copyright .';
+
+    @media screen and (max-width: 900px) {
+        grid-column-gap: 20px;
+        grid-template-areas:
+                            'footer-title . .'
+                            'footer-text footer-address footer-tel'
+                            'footer-linkslabel . .'
+                            'footer-menu . .'
+                            'footer-socialabel footer-socialabel .'
+                            'footer-social footer-social .'
+                            'footer-copyright . .';
+    }
+
+    @media screen and (max-width: 600px) {
+      grid-column-gap: 20px;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+              'footer-title'
+              'footer-text'
+              'footer-address'
+              'footer-tel'
+              'footer-linkslabel'
+              'footer-menu '
+              'footer-socialabel'
+              'footer-social'
+              'footer-copyright';
+    }
+  }
+
+  &__title {
+    grid-area:footer-title;
+    @include titles(35px,#c19b76);
+  }
+
+  &__text {
+    grid-area:footer-text;
+
+  }
+
+  &__address {
+    grid-area:footer-address;
+  }
+
+  &__tel {
+    grid-area:footer-tel;
+  }
+
+  &__linkslabel {
+    grid-area:footer-linkslabel;
+    @include titles(24px,white);
+  }
+
+
+  &__menu {
+    grid-area:footer-menu;
+
+    @media screen and (max-width: 900px) {
+      .bottom-menu__item {
+        margin-top:10px;
+      }
+    }
+  }
+
+
+  &__socialabel {
+    grid-area:footer-socialabel;
+    @include titles(24px,white);
+  }
+
+  &__social {
+    grid-area:footer-social;
+  }
+
+
+  &__icon {
+    fill:white;
+    width:50px;
+    height:30px;
+  }
+
+  &__copyright {
+    grid-area:footer-copyright;
+    font-family: $font-gildaDisplay;
+  }
+}
+
+
+
+
+//Address-telephone
+.address-tel {
+  display: flex;
+  align-items: flex-start;
+
+  &__labels {
+    display: flex;
+    flex-direction: column;
+
+    margin-left:15px;
+  }
+
+  &__label:first-child {
+    margin-bottom: .1rem;
+  }
+}
+
+
+//Bottom-menu
+.bottom-menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+
+  &__item {
+    height: 25%;
+    color:white;
+  }
+}
+
+
+
+
