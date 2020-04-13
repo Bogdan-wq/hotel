@@ -59,9 +59,14 @@ $boxshadow-blue:#b5cbdd;
 
 //Top
 .top {
-  display: flex;
-  justify-content: space-between;
-  padding:15px 20px 15px 28px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 0;
+  }
+
 
   &__image {
     cursor: pointer;
