@@ -52,19 +52,11 @@ $boxshadow-blue:#b5cbdd;
   height:100vh;
   display: flex;
   flex-direction: column;
-  @media screen and (max-width: 1000px){
-    height:150vh;
+  @media screen and (max-width: 1000px) {
+    height: 150vh;
   }
-  @media screen and (max-height: 950px){
-    height:200vh;
-  }
-
-  @media screen and (max-height: 730px){
-    height:250vh;
-  }
-
-  @media screen and (max-height: 600px){
-    height:300vh;
+  @media screen and (max-height: 700px) {
+    height: 300vh;
   }
 }
 

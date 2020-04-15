@@ -61,17 +61,7 @@ address {
     height: 150vh;
   }
 }
-@media screen and (max-height: 950px) {
-  .first-page {
-    height: 200vh;
-  }
-}
-@media screen and (max-height: 730px) {
-  .first-page {
-    height: 250vh;
-  }
-}
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 700px) {
   .first-page {
     height: 300vh;
   }
