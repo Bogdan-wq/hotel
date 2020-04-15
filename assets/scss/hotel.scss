@@ -55,6 +55,17 @@ $boxshadow-blue:#b5cbdd;
   @media screen and (max-width: 1000px){
     height:150vh;
   }
+  @media screen and (max-height: 950px){
+    height:200vh;
+  }
+
+  @media screen and (max-height: 730px){
+    height:250vh;
+  }
+
+  @media screen and (max-height: 600px){
+    height:300vh;
+  }
 }
 
 //Top
