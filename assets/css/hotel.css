@@ -58,12 +58,7 @@ address {
 }
 @media screen and (max-width: 1000px) {
   .first-page {
-    height: 150vh;
-  }
-}
-@media screen and (max-height: 700px) {
-  .first-page {
-    height: 300vh;
+    height: auto;
   }
 }
 
@@ -106,6 +101,11 @@ address {
 @media screen and (max-width: 650px) {
   .header {
     flex-basis: 55%;
+  }
+}
+@media screen and (max-height: 1000px) {
+  .header {
+    padding: 70px 0;
   }
 }
 .header__side-social-wrapper {
